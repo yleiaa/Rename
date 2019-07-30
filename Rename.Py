@@ -5,11 +5,13 @@ import sys
 import argparse
 import os.path
 
+#Arguments
 parser = argparse.ArgumentParser(description="Adds a prefix to all files in a given direcctory")
 parser.add_argument("directory", help="Directory name")
 parser.add_argument("--target", default="CTRL", help="Target of Assay; Default: CTRL")
 args=parser.parse_args()
 
+#File for loop
 for file in os.listdir(args.directory):
     path=os.path.join(args.directory, file)
     newName=str(args.target+"."+file)
