@@ -13,11 +13,11 @@ args=parser.parse_args()
 
 #File for loop
 for file in os.listdir(args.directory):
-    path=os.path.join(args.directory, file)
+    path=os.path.join(args.directory, file) #Path = original directory + file
     newName=str(args.target+"."+file)
-    os.rename(path, newName)
-    newPath=os.path.join(os.getcwd(),newName)
-    os.replace(newPath,os.path.join(args.directory, newName))
+    os.replace(path,os.path.join(args.directory, newName))
+    
+
     
 
     
